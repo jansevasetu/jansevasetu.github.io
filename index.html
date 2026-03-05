@@ -29,6 +29,36 @@ margin:0;
 font-size:32px;
 }
 
+nav{
+background:#333;
+text-align:center;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-size:15px;
+}
+
+.hero{
+background:#f8f8f8;
+text-align:center;
+padding:50px 20px;
+}
+
+.hero h2{
+margin-top:0;
+}
+
+.hero p{
+max-width:750px;
+margin:auto;
+font-size:18px;
+line-height:1.6;
+}
+
 .search{
 text-align:center;
 margin:30px;
@@ -61,6 +91,24 @@ text-align:center;
 box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
+.card a{
+text-decoration:none;
+color:#333;
+}
+
+.mission{
+background:white;
+padding:40px 20px;
+text-align:center;
+}
+
+.mission p{
+max-width:750px;
+margin:auto;
+font-size:17px;
+line-height:1.6;
+}
+
 footer{
 background:#222;
 color:white;
@@ -68,6 +116,12 @@ text-align:center;
 padding:20px;
 margin-top:40px;
 font-size:14px;
+}
+
+footer a{
+color:white;
+margin:10px;
+text-decoration:none;
 }
 
 </style>
@@ -83,45 +137,47 @@ font-size:14px;
 
 </header>
 
-<section style="background:#f8f8f8;padding:40px 20px;text-align:center;">
+<nav>
+
+<a href="/">Home</a>
+<a href="/schemes/">All Schemes</a>
+<a href="/categories/">Categories</a>
+<a href="/guides/">Citizen Guides</a>
+<a href="#">Scam Alerts</a>
+
+</nav>
+
+<section class="hero">
 
 <h2>India’s Public Scheme Knowledge Platform</h2>
 
-<p style="max-width:700px;margin:auto;font-size:18px;line-height:1.6;">
+<p>
 JanSevaSetu is an independent public information platform that helps citizens understand government schemes, benefits, eligibility and application processes clearly and accurately.
 </p>
 
-<p style="margin-top:20px;">
-Explore verified scheme information, citizen guides and awareness resources designed to help people access public welfare programs.
-</p>
-
 </section>
-
-<nav style="background:#333;padding:10px;text-align:center;">
-
-<a href="/" style="color:white;margin:10px;text-decoration:none;">Home</a>
-
-<a href="/schemes/" style="color:white;margin:10px;text-decoration:none;">All Schemes</a>
-
-<a href="/categories/farmer-schemes.html" style="color:white;margin:10px;text-decoration:none;">Categories</a>
-
-<a href="/guides/" style="color:white;margin:10px;text-decoration:none;">Citizen Guides</a>
-
-<a href="#" style="color:white;margin:10px;text-decoration:none;">Scam Alerts</a>
-
-</nav>
 
 <section class="search">
 
 <input type="text" placeholder="योजना खोजें...">
 
 <div style="text-align:center;margin-top:10px;">
-<a href="/schemes/" style="text-decoration:none;">
+<a href="/schemes/">
 <button style="padding:10px 20px;font-size:16px;border:none;border-radius:6px;background:#138808;color:white;">
 All Government Schemes
 </button>
 </a>
 </div>
+
+</section>
+
+<section class="mission">
+
+<h2>Why JanSevaSetu Exists</h2>
+
+<p>
+Across India, many citizens are unaware of government welfare schemes or struggle to understand eligibility, documents and application processes. JanSevaSetu was created to simplify this information and make it accessible to every citizen.
+</p>
 
 </section>
 
@@ -151,7 +207,6 @@ All Government Schemes
 
 </section>
 
-
 <section class="section">
 
 <h2>Categories</h2>
@@ -178,7 +233,6 @@ All Government Schemes
 
 </section>
 
-
 <section class="section">
 
 <h2>Citizen Guides</h2>
@@ -201,7 +255,6 @@ All Government Schemes
 
 </section>
 
-
 <section class="section">
 
 <h2>State Schemes</h2>
@@ -215,22 +268,19 @@ All Government Schemes
 </div>
 
 </section>
+
 <footer>
 
-<footer style="background:#222;color:white;text-align:center;padding:20px;margin-top:40px;">
+<p>
+<a href="/about.html">About</a> |
+<a href="/privacy-policy.html">Privacy Policy</a> |
+<a href="/disclaimer.html">Disclaimer</a> |
+<a href="/contact.html">Contact</a>
+</p>
 
 <p>
-<a href="/about.html" style="color:white;margin:10px;text-decoration:none;">About</a> |
-<a href="/privacy-policy.html" style="color:white;margin:10px;text-decoration:none;">Privacy Policy</a> |
-<a href="/disclaimer.html" style="color:white;margin:10px;text-decoration:none;">Disclaimer</a> |
-<a href="/contact.html" style="color:white;margin:10px;text-decoration:none;">Contact</a>
-</p>
-
-<p style="font-size:14px;">
 © JanSevaSetu - Public Scheme Knowledge Platform
 </p>
-
-</footer>
 
 </footer>
 
