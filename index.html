@@ -211,5 +211,33 @@ Public Awareness & Scam Alerts
 
 </footer>
 
+<script>
+
+function searchSchemes() {
+
+let input = document.getElementById("schemeSearch").value.toLowerCase();
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+let text = card.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
+
+}
+
+</script>
+
 </body>
 </html>
