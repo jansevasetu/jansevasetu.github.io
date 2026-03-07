@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>India Scheme Map | JanSevaSetu</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f6fa;
+}
+
+header{
+text-align:center;
+padding:20px;
+background:white;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav{
+background:#222;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:12px;
+text-decoration:none;
+}
+
+.hero{
+padding:60px;
+text-align:center;
+background:linear-gradient(90deg,#FF9933,#ffffff,#138808);
+}
+
+.hero h1{
+margin:0;
+font-size:38px;
+}
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.state{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+text-align:center;
+cursor:pointer;
+}
+
+.state:hover{
+background:#e8f5e9;
+}
+
+.result{
+margin-top:30px;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>JanSevaSetu</h2>
+
+<p>India Public Welfare Intelligence Platform</p>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/explore.html">Explore</a>
+
+<a href="/schemes/">Schemes</a>
+
+<a href="/guides/">Guides</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>India Scheme Map Explorer</h1>
+
+<p>राज्य के अनुसार सरकारी योजनाएँ खोजें</p>
+
+</section>
+
+<section class="section">
+
+<h2>Select Your State</h2>
+
+<div class="grid">
+
+<div class="state" onclick="showSchemes('gujarat')">Gujarat</div>
+
+<div class="state" onclick="showSchemes('maharashtra')">Maharashtra</div>
+
+<div class="state" onclick="showSchemes('rajasthan')">Rajasthan</div>
+
+<div class="state" onclick="showSchemes('uttarpradesh')">Uttar Pradesh</div>
+
+<div class="state" onclick="showSchemes('madhyapradesh')">Madhya Pradesh</div>
+
+<div class="state" onclick="showSchemes('delhi')">Delhi</div>
+
+</div>
+
+<div id="result" class="result">
+
+Select a state to see schemes.
+
+</div>
+
+</section>
+
+<script>
+
+function showSchemes(state){
+
+let result=document.getElementById("result");
+
+if(state==="gujarat"){
+
+result.innerHTML="Schemes for Gujarat:<br><br>PM Kisan<br>PM Awas Yojana<br>Ayushman Bharat";
+
+}
+
+else if(state==="maharashtra"){
+
+result.innerHTML="Schemes for Maharashtra:<br><br>PM Mudra Yojana<br>Startup India<br>Atal Pension Yojana";
+
+}
+
+else if(state==="rajasthan"){
+
+result.innerHTML="Schemes for Rajasthan:<br><br>PM Fasal Bima<br>PM Kisan<br>PM Jan Dhan";
+
+}
+
+else{
+
+result.innerHTML="Central Government Schemes available in this state.";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
