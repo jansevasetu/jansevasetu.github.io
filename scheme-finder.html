@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scheme Finder Tool | JanSevaSetu</title>
+
+<meta name="description" content="Find government schemes you may be eligible for.">
+
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>JanSevaSetu</h1>
+<p>हर नागरिक तक सही योजना जानकारी</p>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/schemes/">All Schemes</a>
+<a href="/guides/">Citizen Guides</a>
+<a href="/scam-alerts.html">Scam Alerts</a>
+
+</nav>
+
+<section class="section">
+
+<h1>Find Schemes for You</h1>
+
+<p>
+अपनी स्थिति चुनें और देखें कि कौन-सी सरकारी योजनाएँ आपके लिए उपयोगी हो सकती हैं।
+</p>
+
+<select id="category">
+
+<option value="">Select Category</option>
+
+<option value="farmer">Farmer</option>
+
+<option value="student">Student</option>
+
+<option value="women">Women</option>
+
+<option value="business">Business</option>
+
+<option value="senior">Senior Citizen</option>
+
+</select>
+
+<button onclick="findScheme()">Find Schemes</button>
+
+<div id="result" style="margin-top:20px;"></div>
+
+</section>
+
+<script>
+
+function findScheme(){
+
+let category=document.getElementById("category").value;
+let result=document.getElementById("result");
+
+if(category==="farmer"){
+
+result.innerHTML="PM Kisan Samman Nidhi<br>PM Fasal Bima Yojana";
+
+}
+
+else if(category==="student"){
+
+result.innerHTML="National Scholarship Scheme<br>Skill India Mission";
+
+}
+
+else if(category==="women"){
+
+result.innerHTML="Sukanya Samriddhi Yojana<br>Stand Up India Scheme";
+
+}
+
+else if(category==="business"){
+
+result.innerHTML="PM Mudra Yojana<br>Startup India Scheme";
+
+}
+
+else if(category==="senior"){
+
+result.innerHTML="Atal Pension Yojana";
+
+}
+
+else{
+
+result.innerHTML="Please select a category";
+
+}
+
+}
+
+</script>
+
+<footer>
+
+<p>
+
+<a href="/about.html">About</a> |
+<a href="/privacy-policy.html">Privacy Policy</a> |
+<a href="/contact.html">Contact</a>
+
+</p>
+
+<p>
+
+© JanSevaSetu
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
