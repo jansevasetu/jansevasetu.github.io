@@ -6,45 +6,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JanSevaSetu | India’s Public Scheme Intelligence Platform</title>
+<title>JanSevaSetu | India Public Welfare Intelligence Platform</title>
 
-<meta name="description" content="JanSevaSetu – भारत की सरकारी योजनाओं, पात्रता, आवेदन मार्गदर्शन और नागरिक जानकारी का विश्वसनीय मंच।">
-
-<link rel="stylesheet" href="/assets/style.css">
+<meta name="description" content="JanSevaSetu – भारत की सरकारी योजनाओं, पात्रता, लाभ और नागरिक मार्गदर्शन का सार्वजनिक ज्ञान मंच।">
 
 <style>
 
 body{
-font-family:Arial;
 margin:0;
-background:#f4f4f4;
+font-family:Arial;
+background:#f5f6fa;
 }
 
 header{
 text-align:center;
 padding:20px;
+background:white;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 nav{
 background:#222;
-padding:10px;
+padding:12px;
 text-align:center;
 }
 
 nav a{
 color:white;
-margin:10px;
+margin:12px;
 text-decoration:none;
+font-size:15px;
 }
 
 .hero{
-background:linear-gradient(90deg,#FF9933,#ffffff,#138808);
-padding:70px 20px;
+padding:80px 20px;
 text-align:center;
+background:linear-gradient(90deg,#FF9933,#ffffff,#138808);
 }
 
 .hero h1{
-font-size:42px;
+font-size:44px;
 margin:0;
 }
 
@@ -60,51 +61,72 @@ margin-top:30px;
 }
 
 .search input{
-padding:14px;
-width:80%;
-max-width:500px;
+padding:15px;
+width:85%;
+max-width:550px;
 font-size:16px;
 }
 
-.section{
-max-width:1100px;
+.dashboard{
+max-width:1200px;
 margin:auto;
-padding:50px 20px;
+padding:60px 20px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-text-align:center;
+padding:25px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+margin-top:0;
 }
 
 .card a{
 text-decoration:none;
-color:#333;
+color:#138808;
 font-weight:bold;
 }
 
-.highlight{
-background:#ffffff;
-border-left:5px solid #138808;
+.section-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.data-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.data-card{
+background:white;
 padding:20px;
-margin-top:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+
+.data-number{
+font-size:30px;
+font-weight:bold;
+color:#138808;
 }
 
 footer{
+margin-top:50px;
 background:#222;
 color:white;
 text-align:center;
-padding:30px;
-margin-top:40px;
+padding:35px;
 }
 
 </style>
@@ -135,10 +157,10 @@ margin-top:40px;
 
 <section class="hero">
 
-<h1>India’s Public Scheme Intelligence Platform</h1>
+<h1>India Public Welfare Intelligence Platform</h1>
 
 <p>
-सरकारी योजनाओं को समझने, पात्रता जांचने और सही जानकारी पाने के लिए एक स्वतंत्र नागरिक मंच।
+भारत की सरकारी योजनाओं को समझने, पात्रता जांचने और सही जानकारी पाने के लिए एक स्वतंत्र नागरिक मंच।
 </p>
 
 <div class="search">
@@ -149,49 +171,53 @@ margin-top:40px;
 
 </section>
 
-<section class="section">
+<section class="dashboard">
 
-<h2>Find Schemes For You</h2>
+<div class="section-title">
+
+<h2>Explore Schemes</h2>
+
+</div>
 
 <div class="grid">
 
 <div class="card">
 
-<a href="/scheme-eligibility-checker.html">
+<h3>Find Schemes For You</h3>
 
-Check Scheme Eligibility
+<p>अपनी स्थिति के अनुसार सरकारी योजनाएँ खोजें</p>
 
-</a>
-
-</div>
-
-<div class="card">
-
-<a href="/scheme-finder.html">
-
-Find Schemes Based on Category
-
-</a>
+<a href="/scheme-finder.html">Open Tool</a>
 
 </div>
 
 <div class="card">
 
-<a href="/scheme-search.html">
+<h3>Check Eligibility</h3>
 
-Search Government Schemes
+<p>देखें कि कौन-सी योजनाएँ आपके लिए हो सकती हैं</p>
 
-</a>
+<a href="/scheme-eligibility-checker.html">Check Now</a>
 
 </div>
 
 <div class="card">
 
-<a href="/schemes/filter.html">
+<h3>Search Schemes</h3>
 
-Browse Schemes by Category
+<p>भारत की सरकारी योजनाओं को खोजें</p>
 
-</a>
+<a href="/scheme-search.html">Search</a>
+
+</div>
+
+<div class="card">
+
+<h3>Browse Categories</h3>
+
+<p>किसानों, महिलाओं, छात्रों के लिए योजनाएँ</p>
+
+<a href="/schemes/filter.html">Explore</a>
 
 </div>
 
@@ -199,59 +225,45 @@ Browse Schemes by Category
 
 </section>
 
-<section class="section">
+<section class="dashboard">
 
-<h2>Popular Government Schemes</h2>
+<div class="section-title">
 
-<div class="grid">
-
-<div class="card">
-
-<a href="/schemes/pm-kisan.html">
-
-PM Kisan Samman Nidhi
-
-</a>
+<h2>Platform Insights</h2>
 
 </div>
 
-<div class="card">
+<div class="data-grid">
 
-<a href="/schemes/pm-awas-yojana.html">
+<div class="data-card">
 
-PM Awas Yojana
+<div class="data-number">20+</div>
 
-</a>
-
-</div>
-
-<div class="card">
-
-<a href="/schemes/ayushman-bharat.html">
-
-Ayushman Bharat
-
-</a>
+Government Schemes
 
 </div>
 
-<div class="card">
+<div class="data-card">
 
-<a href="/schemes/pm-mudra-yojana.html">
+<div class="data-number">10+</div>
 
-PM Mudra Yojana
-
-</a>
+Citizen Guides
 
 </div>
 
-<div class="card">
+<div class="data-card">
 
-<a href="/schemes/pm-jan-dhan-yojana.html">
+<div class="data-number">4</div>
 
-PM Jan Dhan Yojana
+Smart Tools
 
-</a>
+</div>
+
+<div class="data-card">
+
+<div class="data-number">100%</div>
+
+Free Public Information
 
 </div>
 
@@ -259,57 +271,11 @@ PM Jan Dhan Yojana
 
 </section>
 
-<section class="section">
+<section class="dashboard">
 
-<h2>Citizen Guides</h2>
+<div class="section-title">
 
-<div class="grid">
-
-<div class="card">
-
-<a href="/guides/pm-kisan-apply.html">
-
-PM Kisan Apply Guide
-
-</a>
-
-</div>
-
-<div class="card">
-
-<a href="/guides/pm-kisan-status-check.html">
-
-PM Kisan Status Check
-
-</a>
-
-</div>
-
-<div class="card">
-
-<a href="/guides/pm-kisan-ekyc.html">
-
-PM Kisan eKYC Guide
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Public Awareness</h2>
-
-<div class="highlight">
-
-<strong>Important:</strong>
-
-कई बार सरकारी योजनाओं के नाम पर fraud messages, fake loan apps और गलत जानकारी फैलती है।
-
-JanSevaSetu का उद्देश्य नागरिकों को सही जानकारी देना और ऐसे scams के बारे में जागरूक करना है।
+<h2>Popular Schemes</h2>
 
 </div>
 
@@ -317,11 +283,33 @@ JanSevaSetu का उद्देश्य नागरिकों को स�
 
 <div class="card">
 
-<a href="/scam-alerts.html">
+<h3>PM Kisan Samman Nidhi</h3>
 
-Digital Scam Alerts
+<a href="/schemes/pm-kisan.html">View Details</a>
 
-</a>
+</div>
+
+<div class="card">
+
+<h3>PM Awas Yojana</h3>
+
+<a href="/schemes/pm-awas-yojana.html">View Details</a>
+
+</div>
+
+<div class="card">
+
+<h3>Ayushman Bharat</h3>
+
+<a href="/schemes/ayushman-bharat.html">View Details</a>
+
+</div>
+
+<div class="card">
+
+<h3>PM Mudra Yojana</h3>
+
+<a href="/schemes/pm-mudra-yojana.html">View Details</a>
 
 </div>
 
@@ -345,7 +333,7 @@ Digital Scam Alerts
 
 <p>
 
-© JanSevaSetu - Public Scheme Intelligence Platform
+© JanSevaSetu - Public Welfare Intelligence Platform
 
 </p>
 
