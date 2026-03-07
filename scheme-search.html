@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scheme Search | JanSevaSetu</title>
+
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>JanSevaSetu</h1>
+<p>Search Government Schemes</p>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/schemes/">All Schemes</a>
+<a href="/guides/">Citizen Guides</a>
+
+</nav>
+
+<section class="section">
+
+<h1>Search Government Schemes</h1>
+
+<input type="text" id="search" placeholder="Type scheme name..." onkeyup="searchScheme()">
+
+<div id="results">
+
+<div class="scheme">PM Kisan Samman Nidhi</div>
+<div class="scheme">PM Awas Yojana</div>
+<div class="scheme">Ayushman Bharat</div>
+<div class="scheme">PM Mudra Yojana</div>
+<div class="scheme">PM Jan Dhan Yojana</div>
+<div class="scheme">Sukanya Samriddhi Yojana</div>
+<div class="scheme">Atal Pension Yojana</div>
+<div class="scheme">PM Fasal Bima Yojana</div>
+<div class="scheme">Startup India Scheme</div>
+
+</div>
+
+</section>
+
+<script>
+
+function searchScheme(){
+
+let input=document.getElementById("search").value.toLowerCase();
+
+let schemes=document.querySelectorAll(".scheme");
+
+schemes.forEach(function(s){
+
+let text=s.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+s.style.display="block";
+
+}
+
+else{
+
+s.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+<footer>
+
+<p>© JanSevaSetu</p>
+
+</footer>
+
+</body>
+
+</html>
