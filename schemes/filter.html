@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scheme Filter | JanSevaSetu</title>
+
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>JanSevaSetu</h1>
+<p>Find Government Schemes Easily</p>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/schemes/">All Schemes</a>
+<a href="/guides/">Citizen Guides</a>
+
+</nav>
+
+<section class="section">
+
+<h1>Filter Government Schemes</h1>
+
+<select id="filter">
+
+<option value="all">All</option>
+
+<option value="farmer">Farmer</option>
+
+<option value="business">Business</option>
+
+<option value="health">Health</option>
+
+<option value="women">Women</option>
+
+</select>
+
+<div id="schemes">
+
+<div class="scheme farmer">
+PM Kisan Samman Nidhi
+</div>
+
+<div class="scheme farmer">
+PM Fasal Bima Yojana
+</div>
+
+<div class="scheme business">
+PM Mudra Yojana
+</div>
+
+<div class="scheme business">
+Startup India Scheme
+</div>
+
+<div class="scheme health">
+Ayushman Bharat
+</div>
+
+<div class="scheme women">
+Sukanya Samriddhi Yojana
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+document.getElementById("filter").addEventListener("change",function(){
+
+let value=this.value;
+let schemes=document.querySelectorAll(".scheme");
+
+schemes.forEach(function(s){
+
+if(value==="all" || s.classList.contains(value)){
+
+s.style.display="block";
+
+}
+
+else{
+
+s.style.display="none";
+
+}
+
+});
+
+});
+
+</script>
+
+<footer>
+
+<p>© JanSevaSetu</p>
+
+</footer>
+
+</body>
+</html>
