@@ -6,86 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JanSevaSetu Dashboard</title>
+<title>India Welfare Dashboard | JanSevaSetu</title>
 
-<style>
+<link rel="stylesheet" href="/assets/style.css">
 
-body{
-margin:0;
-font-family:Arial;
-background:#f4f6fb;
-}
-
-header{
-text-align:center;
-padding:20px;
-background:white;
-box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-
-nav{
-background:#222;
-padding:12px;
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:10px;
-text-decoration:none;
-}
-
-.hero{
-background:linear-gradient(90deg,#FF9933,#ffffff,#138808);
-padding:60px;
-text-align:center;
-}
-
-.hero h1{
-margin:0;
-font-size:38px;
-}
-
-.section{
-max-width:1200px;
-margin:auto;
-padding:50px 20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
-text-align:center;
-}
-
-.number{
-font-size:34px;
-font-weight:bold;
-color:#138808;
-}
-
-.title{
-margin-top:10px;
-font-size:16px;
-}
-
-.panel{
-margin-top:40px;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
-}
-
-</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -93,109 +18,160 @@ box-shadow:0 3px 10px rgba(0,0,0,0.08);
 
 <header>
 
-<h2>JanSevaSetu</h2>
-
-<p>Public Welfare Intelligence Platform</p>
+<h1>JanSevaSetu</h1>
+<p>India Welfare Intelligence Platform</p>
 
 </header>
 
 <nav>
 
 <a href="/">Home</a>
-
 <a href="/explore.html">Explore</a>
-
+<a href="/categories/">Categories</a>
 <a href="/schemes/">Schemes</a>
-
 <a href="/guides/">Guides</a>
-
 <a href="/tools.html">Tools</a>
-
-<a href="/scam-alerts.html">Scam Alerts</a>
-
-<a href="/about.html">About</a>
+<a href="/scam-alerts.html">Alerts</a>
 
 </nav>
 
 <section class="hero">
 
-<h1>Platform Dashboard</h1>
+<h1>India Welfare Dashboard</h1>
 
-<p>India Government Scheme Intelligence Overview</p>
+<p>
+Overview of major welfare programmes and their impact across India.
+</p>
 
 </section>
 
 <section class="section">
 
+<h2>India Welfare Snapshot</h2>
+
 <div class="grid">
 
 <div class="card">
 
-<div class="number">20+</div>
-
-<div class="title">Government Schemes</div>
-
-</div>
-
-<div class="card">
-
-<div class="number">10+</div>
-
-<div class="title">Citizen Guides</div>
+<h3>5</h3>
+Schemes Analysed
 
 </div>
 
 <div class="card">
 
-<div class="number">4</div>
-
-<div class="title">Smart Tools</div>
+<h3>100+ crore</h3>
+Beneficiaries Covered
 
 </div>
 
 <div class="card">
 
-<div class="number">6</div>
-
-<div class="title">Categories</div>
-
-</div>
+<h3>₹25+ lakh crore</h3>
+Total Welfare Impact
 
 </div>
 
-<div class="panel">
+<div class="card">
 
-<h3>Platform Mission</h3>
-
-<p>
-
-JanSevaSetu का उद्देश्य नागरिकों को सरकारी योजनाओं की स्पष्ट और विश्वसनीय जानकारी प्रदान करना है ताकि लोग सही लाभ प्राप्त कर सकें और गलत जानकारी से बच सकें।
-
-</p>
+<h3>10+ sectors</h3>
+Welfare Coverage Areas
 
 </div>
-
-<div class="panel">
-
-<h3>What You Can Do Here</h3>
-
-<ul>
-
-<li>Find government schemes for you</li>
-
-<li>Check eligibility for schemes</li>
-
-<li>Explore schemes by category</li>
-
-<li>Access citizen guides</li>
-
-<li>Stay aware of digital scams</li>
-
-</ul>
 
 </div>
 
 </section>
+
+<section class="section">
+
+<h2>Major Schemes by Beneficiaries</h2>
+
+<canvas id="beneficiaryChart"></canvas>
+
+</section>
+
+<section class="section">
+
+<h2>Major Schemes by Financial Scale</h2>
+
+<canvas id="budgetChart"></canvas>
+
+</section>
+
+<section class="section">
+
+<h2>Top Welfare Schemes</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>PM Jan Dhan Yojana</h3>
+<a href="/schemes/pm-jan-dhan-yojana.html">View Scheme</a>
+</div>
+
+<div class="card">
+<h3>PM Kisan</h3>
+<a href="/schemes/pm-kisan.html">View Scheme</a>
+</div>
+
+<div class="card">
+<h3>Ayushman Bharat</h3>
+<a href="/schemes/ayushman-bharat.html">View Scheme</a>
+</div>
+
+<div class="card">
+<h3>PM Mudra</h3>
+<a href="/schemes/pm-mudra-yojana.html">View Scheme</a>
+</div>
+
+<div class="card">
+<h3>PM Awas</h3>
+<a href="/schemes/pm-awas-yojana.html">View Scheme</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+
+<a href="/about.html">About</a> |
+<a href="/privacy-policy.html">Privacy Policy</a> |
+<a href="/contact.html">Contact</a>
+
+</p>
+
+</footer>
+
+<script>
+
+new Chart(document.getElementById("beneficiaryChart"),{
+type:"bar",
+data:{
+labels:["Jan Dhan","PM Kisan","Ayushman","Mudra","PMAY"],
+datasets:[{
+label:"Beneficiaries (crore)",
+data:[50,11,50,40,3],
+backgroundColor:"green"
+}]
+}
+});
+
+new Chart(document.getElementById("budgetChart"),{
+type:"pie",
+data:{
+labels:["PM Kisan","PMAY","Ayushman","Mudra"],
+datasets:[{
+data:[3,10,1,23],
+backgroundColor:["green","blue","orange","purple"]
+}]
+}
+});
+
+</script>
 
 </body>
 
