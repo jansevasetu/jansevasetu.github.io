@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Government Schemes | JanSevaSetu</title>
+
+<link rel="stylesheet" href="/assets/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>JanSevaSetu</h1>
+
+<p>Search Government Schemes</p>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/explore.html">Explore</a>
+
+<a href="/schemes/">Schemes</a>
+
+<a href="/guides/">Guides</a>
+
+<a href="/tools.html">Tools</a>
+
+<a href="/scam-alerts.html">Scam Alerts</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Search Government Schemes</h1>
+
+<p>सरकारी योजनाओं को खोजें</p>
+
+</section>
+
+<section class="section">
+
+<input type="text" id="searchInput" placeholder="Type scheme name..." onkeyup="searchScheme()" style="width:100%;padding:12px;font-size:16px;">
+
+<div id="results" style="margin-top:20px;"></div>
+
+</section>
+
+<script>
+
+const schemes = [
+
+{name:"PM Kisan Samman Nidhi",link:"/schemes/pm-kisan.html"},
+
+{name:"PM Awas Yojana",link:"/schemes/pm-awas-yojana.html"},
+
+{name:"Ayushman Bharat",link:"/schemes/ayushman-bharat.html"},
+
+{name:"PM Mudra Yojana",link:"/schemes/pm-mudra-yojana.html"},
+
+{name:"PM Jan Dhan Yojana",link:"/schemes/pm-jan-dhan-yojana.html"}
+
+];
+
+function searchScheme(){
+
+let input=document.getElementById("searchInput").value.toLowerCase();
+
+let results=document.getElementById("results");
+
+results.innerHTML="";
+
+schemes.forEach(function(s){
+
+if(s.name.toLowerCase().includes(input)){
+
+results.innerHTML+=`<div class="card"><a href="${s.link}">${s.name}</a></div>`;
+
+}
+
+});
+
+}
+
+</script>
+
+<footer>
+
+<p>
+
+<a href="/about.html">About</a> |
+
+<a href="/privacy-policy.html">Privacy Policy</a> |
+
+<a href="/contact.html">Contact</a>
+
+</p>
+
+<p>
+
+© JanSevaSetu
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
