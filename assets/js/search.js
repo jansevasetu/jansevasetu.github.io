@@ -1,19 +1,41 @@
-function searchSchemes() {
+async function loadSchemes(){
 
-let input = document.getElementById("searchInput").value.toLowerCase();
+const res = await fetch('/data/schemes.json');
 
-let schemes = document.querySelectorAll(".scheme-item");
+const schemes = await res.json();
 
-schemes.forEach(function(item){
+const input = document.getElementById("searchBox");
 
-let text = item.textContent.toLowerCase();
+const result = document.getElementById("results");
 
-if(text.includes(input)){
-item.style.display = "block";
-}else{
-item.style.display = "none";
-}
+input.addEventListener("keyup", function(){
+
+let query = input.value.toLowerCase();
+
+result.innerHTML="";
+
+schemes.filter(scheme =>
+
+scheme.name.toLowerCase().includes(query)
+
+).forEach(scheme => {
+
+result.innerHTML +=
+
+`<div class="scheme-card">
+
+<h3>${scheme.name}</h3>
+
+<p>${scheme.benefit}</p>
+
+<a href="${scheme.url}">View Details</a>
+
+</div>`
+
+});
 
 });
 
 }
+
+loadSchemes();
