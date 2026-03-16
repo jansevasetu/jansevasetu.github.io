@@ -92,20 +92,28 @@ Find Schemes
 async function findSchemes(){
 
 const occupation = document.getElementById("occupation").value;
+const income = document.getElementById("income").value;
 
 const res = await fetch("../data/schemes.json");
-
 const schemes = await res.json();
 
-let matches = schemes.filter(function(s){
+let matches = [];
 
-if(occupation === "farmer" && s.name.includes("Kisan")) return true;
+schemes.forEach(function(s){
 
-if(occupation === "business" && s.name.includes("Mudra")) return true;
+const name = s.name.toLowerCase();
 
-if(occupation === "woman" && s.name.includes("Sukanya")) return true;
+if(occupation === "farmer" && name.includes("kisan"))
+matches.push(s);
 
-return false;
+if(occupation === "business" && name.includes("mudra"))
+matches.push(s);
+
+if(occupation === "student" && name.includes("scholarship"))
+matches.push(s);
+
+if(occupation === "woman" && name.includes("sukanya"))
+matches.push(s);
 
 });
 
@@ -113,10 +121,9 @@ const results = document.getElementById("finderResults");
 
 results.innerHTML="";
 
-if(matches.length===0){
+if(matches.length === 0){
 
-results.innerHTML="<p>No schemes found.</p>";
-
+results.innerHTML="<p>No schemes found for this selection.</p>";
 return;
 
 }
@@ -124,17 +131,11 @@ return;
 matches.forEach(function(s){
 
 results.innerHTML += `
-
 <div class="card">
-
 <h3>${s.name}</h3>
-
 <p>${s.benefit}</p>
-
 <a href="${s.url}">View Details</a>
-
 </div>
-
 `;
 
 });
@@ -142,7 +143,6 @@ results.innerHTML += `
 }
 
 </script>
-
 </body>
 
 </html>
