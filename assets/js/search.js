@@ -1,5 +1,7 @@
 async function loadSchemes(){
 
+try{
+
 const res = await fetch('/data/schemes.json');
 
 const schemes = await res.json();
@@ -8,21 +10,51 @@ const input = document.getElementById("searchBox");
 
 const results = document.getElementById("results");
 
+/* अगर page में search elements नहीं हैं तो script stop */
+
+if(!input || !results){
+return;
+}
+
+/* search function */
+
 input.addEventListener("keyup",function(){
 
-let query = input.value.toLowerCase();
+let query = input.value.trim().toLowerCase();
 
 results.innerHTML="";
 
-schemes.filter(scheme=>
+/* empty search */
 
-scheme.name.toLowerCase().includes(query)
+if(query.length === 0){
+return;
+}
 
-).forEach(scheme=>{
+/* filter schemes */
 
-results.innerHTML+=`
+let matches = schemes.filter(function(scheme){
 
-<div class="scheme-card">
+return scheme.name.toLowerCase().includes(query);
+
+});
+
+/* no results */
+
+if(matches.length === 0){
+
+results.innerHTML = "<p>No schemes found.</p>";
+
+return;
+
+}
+
+/* render results */
+
+matches.forEach(function(scheme){
+
+results.innerHTML += `
+
+<div class="card">
 
 <h3>${scheme.name}</h3>
 
@@ -37,6 +69,12 @@ results.innerHTML+=`
 });
 
 });
+
+}catch(error){
+
+console.error("Scheme search error:", error);
+
+}
 
 }
 
