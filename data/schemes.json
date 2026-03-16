@@ -1,17 +1,25 @@
 [
 {
 "name":"PM Kisan Samman Nidhi",
-"benefit":"₹6000 per year income support",
+"benefit":"₹6000 income support for farmers",
 "url":"/schemes/pm-kisan.html"
 },
+
 {
 "name":"PM Awas Yojana",
 "benefit":"Affordable housing scheme",
 "url":"/schemes/pm-awas-yojana.html"
 },
+
 {
 "name":"Ayushman Bharat",
 "benefit":"₹5 lakh health insurance",
 "url":"/schemes/ayushman-bharat.html"
+},
+
+{
+"name":"PM Mudra Yojana",
+"benefit":"Loans for small businesses",
+"url":"/schemes/pm-mudra-yojana.html"
 }
 ]
