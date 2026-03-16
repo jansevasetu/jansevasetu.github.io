@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scheme Finder | JanSevaSetu</title>
+
+<link rel="stylesheet" href="../assets/style.css">
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+<div class="logo">
+<h1>JanSevaSetu</h1>
+<span>India Welfare Intelligence Platform</span>
+</div>
+
+<nav>
+
+<a href="../index.html">Home</a>
+<a href="../schemes/">Schemes</a>
+<a href="../categories/">Categories</a>
+<a href="../guides/">Guides</a>
+
+</nav>
+
+</header>
+
+
+<section class="section">
+
+<h2 style="text-align:center">Find Schemes For You</h2>
+
+<p style="text-align:center">
+अपनी जानकारी भरें और देखें कि कौन-सी योजनाएँ आपके लिए उपयोगी हो सकती हैं।
+</p>
+
+<div style="max-width:500px;margin:auto;margin-top:30px">
+
+<label>Occupation</label>
+
+<select id="occupation" style="width:100%;padding:10px;margin-bottom:15px">
+
+<option value="">Select</option>
+<option value="farmer">Farmer</option>
+<option value="student">Student</option>
+<option value="woman">Woman</option>
+<option value="business">Business</option>
+
+</select>
+
+
+<label>Income Level</label>
+
+<select id="income" style="width:100%;padding:10px;margin-bottom:15px">
+
+<option value="">Select</option>
+<option value="low">Low</option>
+<option value="middle">Middle</option>
+
+</select>
+
+
+<button onclick="findSchemes()" style="padding:12px 20px;background:#ff9933;color:white;border:none;border-radius:6px;cursor:pointer">
+
+Find Schemes
+
+</button>
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2 style="text-align:center">Recommended Schemes</h2>
+
+<div id="finderResults" class="grid"></div>
+
+</section>
+
+
+<script>
+
+async function findSchemes(){
+
+const occupation = document.getElementById("occupation").value;
+
+const res = await fetch("../data/schemes.json");
+
+const schemes = await res.json();
+
+let matches = schemes.filter(function(s){
+
+if(occupation === "farmer" && s.name.includes("Kisan")) return true;
+
+if(occupation === "business" && s.name.includes("Mudra")) return true;
+
+if(occupation === "woman" && s.name.includes("Sukanya")) return true;
+
+return false;
+
+});
+
+const results = document.getElementById("finderResults");
+
+results.innerHTML="";
+
+if(matches.length===0){
+
+results.innerHTML="<p>No schemes found.</p>";
+
+return;
+
+}
+
+matches.forEach(function(s){
+
+results.innerHTML += `
+
+<div class="card">
+
+<h3>${s.name}</h3>
+
+<p>${s.benefit}</p>
+
+<a href="${s.url}">View Details</a>
+
+</div>
+
+`;
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
