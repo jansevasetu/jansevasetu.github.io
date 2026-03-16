@@ -18,7 +18,7 @@ results.innerHTML="Searching...";
 
 try{
 
-const res = await fetch("data/schemes.json");
+const res = await fetch("./data/schemes.json")
 const schemes = await res.json();
 
 let matches = schemes.filter(function(scheme){
