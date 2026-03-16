@@ -1,36 +1,34 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-async function loadSchemes(){
+const form = document.getElementById("searchForm");
+const input = document.getElementById("searchBox");
+const results = document.getElementById("results");
+
+if(!form || !input || !results){
+return;
+}
+
+form.addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const query = input.value.toLowerCase().trim();
+
+results.innerHTML="Searching...";
 
 try{
 
 const res = await fetch("data/schemes.json");
-
 const schemes = await res.json();
-
-const input = document.getElementById("searchBox");
-const results = document.getElementById("results");
-
-if(!input || !results){
-return;
-}
-
-input.addEventListener("input", function(){
-
-let query = input.value.toLowerCase().trim();
-
-results.innerHTML="";
-
-if(query.length === 0){
-return;
-}
 
 let matches = schemes.filter(function(scheme){
 return scheme.name.toLowerCase().includes(query);
 });
 
+results.innerHTML="";
+
 if(matches.length === 0){
-results.innerHTML="<p>No schemes found</p>";
+results.innerHTML="<p>No schemes found.</p>";
 return;
 }
 
@@ -46,16 +44,12 @@ results.innerHTML += `
 
 });
 
-});
-
 }catch(error){
 
-console.log("Search error:", error);
+results.innerHTML="Search error. Please try again.";
 
 }
 
-}
-
-loadSchemes();
+});
 
 });
