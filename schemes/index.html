@@ -8,7 +8,7 @@
 
 <title>All Government Schemes | JanSevaSetu</title>
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="../assets/style.css">
 
 <meta name="description" content="भारत की प्रमुख सरकारी योजनाओं की सूची और जानकारी।">
 
@@ -16,151 +16,122 @@
 
 <body>
 
-<header>
+<header class="site-header">
 
+<div class="logo">
 <h1>JanSevaSetu</h1>
-
-<p>All Government Schemes</p>
-
-</header>
+<span>India Welfare Intelligence Platform</span>
+</div>
 
 <nav>
 
-<a href="/">Home</a>
-
-<a href="/explore.html">Explore</a>
-
-<a href="/schemes/">Schemes</a>
-
-<a href="/guides/">Guides</a>
-
-<a href="/tools.html">Tools</a>
-
-<a href="/scam-alerts.html">Scam Alerts</a>
+<a href="../index.html">Home</a>
+<a href="../explore.html">Explore</a>
+<a href="../categories/">Categories</a>
+<a href="../guides/">Guides</a>
+<a href="../tools/scheme-finder.html">Scheme Finder</a>
+<a href="../scam-alerts.html">Scam Alerts</a>
 
 </nav>
+
+</header>
+
 
 <section class="hero">
 
 <h1>Government Schemes Directory</h1>
 
 <p>
-भारत सरकार और राज्य सरकारों की प्रमुख योजनाओं की जानकारी।
+भारत सरकार और राज्य सरकारों की प्रमुख योजनाओं की जानकारी देखें।
 </p>
 
 </section>
 
+
 <section class="section">
 
-<h2>Central Government Schemes</h2>
+<h2 style="text-align:center">Central Government Schemes</h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>PM Kisan Samman Nidhi</h3>
-
-<a href="/schemes/pm-kisan.html">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>PM Awas Yojana</h3>
-
-<a href="/schemes/pm-awas-yojana.html">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>Ayushman Bharat</h3>
-
-<a href="/schemes/ayushman-bharat.html">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>PM Mudra Yojana</h3>
-
-<a href="/schemes/pm-mudra-yojana.html">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>PM Jan Dhan Yojana</h3>
-
-<a href="/schemes/pm-jan-dhan-yojana.html">View Scheme</a>
-
-</div>
-
-</div>
+<div id="schemeList" class="grid"></div>
 
 </section>
 
+
 <section class="section">
 
-<h2>Explore by Category</h2>
+<h2 style="text-align:center">Explore by Category</h2>
 
 <div class="grid">
 
 <div class="card">
-
 <h3>Farmer Schemes</h3>
-
-<a href="/categories/farmer-schemes.html">Explore</a>
-
+<a href="../categories/farmer-schemes.html">Explore</a>
 </div>
 
 <div class="card">
-
 <h3>Women Schemes</h3>
-
-<a href="#">Explore</a>
-
+<a href="../categories/women-schemes.html">Explore</a>
 </div>
 
 <div class="card">
-
 <h3>Student Schemes</h3>
-
-<a href="#">Explore</a>
-
+<a href="../categories/">Explore</a>
 </div>
 
 <div class="card">
-
 <h3>Health Schemes</h3>
-
-<a href="#">Explore</a>
-
+<a href="../categories/health-schemes.html">Explore</a>
 </div>
 
 </div>
 
 </section>
+
 
 <footer>
 
 <p>
 
-<a href="/about.html">About</a> |
-
-<a href="/privacy-policy.html">Privacy Policy</a> |
-
-<a href="/contact.html">Contact</a>
+<a href="../about.html">About</a> |
+<a href="../privacy-policy.html">Privacy Policy</a> |
+<a href="../contact.html">Contact</a>
 
 </p>
 
 <p>
-
 © JanSevaSetu
-
 </p>
 
 </footer>
+
+
+<script>
+
+async function loadSchemes(){
+
+const res = await fetch("../data/schemes.json");
+
+const schemes = await res.json();
+
+const list = document.getElementById("schemeList");
+
+schemes.forEach(function(s){
+
+list.innerHTML += `
+<div class="card">
+<h3>${s.name}</h3>
+<p>${s.benefit}</p>
+<a href="${s.url}">View Scheme</a>
+</div>
+`;
+
+});
+
+}
+
+loadSchemes();
+
+</script>
 
 </body>
 
