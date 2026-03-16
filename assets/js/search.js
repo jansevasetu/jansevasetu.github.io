@@ -1,4 +1,4 @@
-async function searchSchemes(){
+async function loadSchemes(){
 
 const res = await fetch('/data/schemes.json');
 
@@ -8,21 +8,21 @@ const input = document.getElementById("searchBox");
 
 const results = document.getElementById("results");
 
-input.addEventListener("keyup", function(){
+input.addEventListener("keyup",function(){
 
 let query = input.value.toLowerCase();
 
 results.innerHTML="";
 
-schemes.filter(scheme =>
+schemes.filter(scheme=>
 
 scheme.name.toLowerCase().includes(query)
 
-).forEach(scheme => {
+).forEach(scheme=>{
 
-results.innerHTML +=
+results.innerHTML+=`
 
-`<div class="scheme-card">
+<div class="scheme-card">
 
 <h3>${scheme.name}</h3>
 
@@ -30,7 +30,9 @@ results.innerHTML +=
 
 <a href="${scheme.url}">View Details</a>
 
-</div>`;
+</div>
+
+`;
 
 });
 
@@ -38,4 +40,4 @@ results.innerHTML +=
 
 }
 
-searchSchemes();
+loadSchemes();
