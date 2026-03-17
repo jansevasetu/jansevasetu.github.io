@@ -8,23 +8,23 @@
 
 <title>Farmer Schemes | JanSevaSetu</title>
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="../assets/style.css">
 
-<meta name="description" content="भारत के किसानों के लिए सरकारी योजनाएँ – PM Kisan, PM Fasal Bima और अन्य योजनाओं की जानकारी।">
+<meta name="description" content="Government schemes for farmers including PM Kisan, crop insurance and agriculture support programs.">
 
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
 
+<div class="logo">
 <h1>JanSevaSetu</h1>
-
-<p>Government Schemes for Farmers</p>
-
-</header>
+<span>India’s Public Welfare Intelligence Platform</span>
+</div>
 
 <nav>
+
 <a href="../index.html">Home</a>
 <a href="../explore.html">Explore</a>
 <a href="../schemes/">Schemes</a>
@@ -32,130 +32,90 @@
 <a href="../guides/">Guides</a>
 <a href="../tools/scheme-finder.html">Finder</a>
 <a href="../dashboard.html">Dashboard</a>
-<a href="../scam-alerts.html">Alerts</a>
+
 </nav>
+
+</header>
+
 
 <section class="hero">
 
-<h1>Farmer Welfare Schemes</h1>
+<h1>Farmer Schemes</h1>
 
 <p>
-भारत सरकार द्वारा किसानों के लिए चलाई जा रही प्रमुख योजनाओं की जानकारी।
+Explore government schemes designed for farmers including financial support, insurance and subsidies.
 </p>
 
 </section>
 
-<section class="section">
-
-<h2>Popular Farmer Schemes</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>PM Kisan Samman Nidhi</h3>
-
-<p>किसानों को ₹6000 वार्षिक आर्थिक सहायता।</p>
-
-<a href="/schemes/pm-kisan.html">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>PM Fasal Bima Yojana</h3>
-
-<p>फसल नुकसान के लिए बीमा सुरक्षा।</p>
-
-<a href="#">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>Soil Health Card Scheme</h3>
-
-<p>मिट्टी की गुणवत्ता जांच और खेती सुधार योजना।</p>
-
-<a href="#">View Scheme</a>
-
-</div>
-
-<div class="card">
-
-<h3>Kisan Credit Card</h3>
-
-<p>किसानों के लिए सस्ती ब्याज दर पर कृषि ऋण।</p>
-
-<a href="#">View Scheme</a>
-
-</div>
-
-</div>
-
-</section>
 
 <section class="section">
 
-<h2>Explore More Categories</h2>
+<h2 style="text-align:center">Available Schemes</h2>
 
-<div class="grid">
-
-<div class="card">
-
-<h3>Women Schemes</h3>
-
-<a href="#">Explore</a>
-
-</div>
-
-<div class="card">
-
-<h3>Student Schemes</h3>
-
-<a href="#">Explore</a>
-
-</div>
-
-<div class="card">
-
-<h3>Business Schemes</h3>
-
-<a href="#">Explore</a>
-
-</div>
-
-<div class="card">
-
-<h3>Health Schemes</h3>
-
-<a href="#">Explore</a>
-
-</div>
-
-</div>
+<div id="schemeList" class="grid"></div>
 
 </section>
+
+
+<section class="section">
+
+<h2>Who Should Explore This?</h2>
+
+<p>
+This category is useful for farmers, agricultural workers and rural households looking for financial support, insurance and crop-related benefits.
+</p>
+
+</section>
+
 
 <footer>
 
 <p>
-
-<a href="/about.html">About</a> |
-
-<a href="/privacy-policy.html">Privacy Policy</a> |
-
-<a href="/contact.html">Contact</a>
-
+<a href="../about.html">About</a> |
+<a href="../privacy-policy.html">Privacy Policy</a> |
+<a href="../contact.html">Contact</a>
 </p>
 
-<p>
-
-© JanSevaSetu
-
-</p>
+<p>© JanSevaSetu</p>
 
 </footer>
+
+
+<script>
+
+async function loadSchemes(){
+
+const res = await fetch("../data/schemes.json");
+
+const schemes = await res.json();
+
+const list = document.getElementById("schemeList");
+
+schemes.forEach(function(s){
+
+const name = s.name.toLowerCase();
+
+// Farmer filter logic
+if(name.includes("kisan") || name.includes("fasal") || name.includes("agri")){
+
+list.innerHTML += `
+<div class="card">
+<h3>${s.name}</h3>
+<p>${s.benefit}</p>
+<a href="${s.url}">View Scheme</a>
+</div>
+`;
+
+}
+
+});
+
+}
+
+loadSchemes();
+
+</script>
 
 </body>
 
