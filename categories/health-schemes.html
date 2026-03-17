@@ -6,24 +6,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Health Government Schemes | JanSevaSetu</title>
+<title>Health Schemes | JanSevaSetu</title>
 
-<meta name="description" content="स्वास्थ्य से जुड़ी भारत सरकार की प्रमुख योजनाओं की जानकारी।">
+<link rel="stylesheet" href="../assets/style.css">
 
-<link rel="stylesheet" href="/assets/style.css">
+<meta name="description" content="Government health schemes including Ayushman Bharat and national health programs.">
 
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
 
+<div class="logo">
 <h1>JanSevaSetu</h1>
-<p>हर नागरिक तक सही योजना जानकारी</p>
-
-</header>
+<span>India’s Public Welfare Intelligence Platform</span>
+</div>
 
 <nav>
+
 <a href="../index.html">Home</a>
 <a href="../explore.html">Explore</a>
 <a href="../schemes/">Schemes</a>
@@ -32,44 +33,96 @@
 <a href="../tools/scheme-finder.html">Finder</a>
 <a href="../dashboard.html">Dashboard</a>
 <a href="../scam-alerts.html">Alerts</a>
+
 </nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Health Schemes</h1>
+
+<p>
+Explore government healthcare schemes including insurance, treatment support and health services.
+</p>
+
+</section>
+
 
 <section class="section">
 
-<h1>Health Government Schemes</h1>
+<h2 style="text-align:center">Available Schemes</h2>
 
-<p>
-यहाँ स्वास्थ्य से संबंधित भारत सरकार की प्रमुख योजनाओं की जानकारी दी गई है।
-</p>
-
-<div class="grid">
-
-<div class="card">
-<a href="/schemes/ayushman-bharat.html">
-Ayushman Bharat (PM-JAY)
-</a>
-</div>
-
-</div>
+<div id="schemeList" class="grid"></div>
 
 </section>
+
+
+<section class="section">
+
+<h2>Who Should Explore This?</h2>
+
+<p>
+This category is useful for families seeking healthcare support, insurance coverage and affordable treatment options.
+</p>
+
+</section>
+
 
 <footer>
 
 <p>
-
-<a href="/about.html">About</a> |
-<a href="/privacy-policy.html">Privacy Policy</a> |
-<a href="/disclaimer.html">Disclaimer</a> |
-<a href="/contact.html">Contact</a>
-
+<a href="../about.html">About</a> |
+<a href="../privacy-policy.html">Privacy Policy</a> |
+<a href="../contact.html">Contact</a>
 </p>
 
-<p>
-© JanSevaSetu - Public Scheme Knowledge Platform
-</p>
+<p>© JanSevaSetu</p>
 
 </footer>
 
+
+<script>
+
+async function loadSchemes(){
+
+const res = await fetch("../data/schemes.json");
+
+const schemes = await res.json();
+
+const list = document.getElementById("schemeList");
+
+schemes.forEach(function(s){
+
+const name = s.name.toLowerCase();
+
+// Health filter logic
+if(
+name.includes("ayushman") ||
+name.includes("health") ||
+name.includes("hospital") ||
+name.includes("insurance")
+){
+
+list.innerHTML += `
+<div class="card">
+<h3>${s.name}</h3>
+<p>${s.benefit}</p>
+<a href="${s.url}">View Scheme</a>
+</div>
+`;
+
+}
+
+});
+
+}
+
+loadSchemes();
+
+</script>
+
 </body>
+
 </html>
