@@ -107,17 +107,33 @@ schemes.forEach(function(s){
 
 const name = s.name.toLowerCase();
 
-if(occupation === "farmer" && name.includes("kisan"))
+// Farmer logic
+if(occupation === "farmer"){
+if(name.includes("kisan") || name.includes("fasal") || name.includes("insurance")){
 matches.push(s);
+}
+}
 
-if(occupation === "business" && name.includes("mudra"))
+// Business logic
+if(occupation === "business"){
+if(name.includes("mudra") || name.includes("startup")){
 matches.push(s);
+}
+}
 
-if(occupation === "student" && name.includes("scholarship"))
+// Woman logic
+if(occupation === "woman"){
+if(name.includes("sukanya") || name.includes("ujjwala")){
 matches.push(s);
+}
+}
 
-if(occupation === "woman" && name.includes("sukanya"))
+// General low income logic
+if(income === "low"){
+if(name.includes("awas") || name.includes("jan dhan") || name.includes("health")){
 matches.push(s);
+}
+}
 
 });
 
@@ -126,13 +142,14 @@ const results = document.getElementById("finderResults");
 results.innerHTML="";
 
 if(matches.length === 0){
-
-results.innerHTML="<p>No schemes found for this selection.</p>";
+results.innerHTML="<p>No schemes found. Try different selection.</p>";
 return;
-
 }
 
-matches.forEach(function(s){
+// Remove duplicates
+const unique = [...new Map(matches.map(item => [item.name, item])).values()];
+
+unique.forEach(function(s){
 
 results.innerHTML += `
 <div class="card">
