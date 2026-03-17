@@ -1,25 +1,87 @@
 [
 {
 "name":"PM Kisan Samman Nidhi",
-"benefit":"₹6000 income support for farmers",
+"benefit":"Income support for farmers",
 "url":"/schemes/pm-kisan.html"
 },
-
 {
 "name":"PM Awas Yojana",
 "benefit":"Affordable housing scheme",
 "url":"/schemes/pm-awas-yojana.html"
 },
-
 {
 "name":"Ayushman Bharat",
-"benefit":"₹5 lakh health insurance",
+"benefit":"Free health insurance",
 "url":"/schemes/ayushman-bharat.html"
 },
-
 {
 "name":"PM Mudra Yojana",
-"benefit":"Loans for small businesses",
+"benefit":"Business loans for small enterprises",
 "url":"/schemes/pm-mudra-yojana.html"
+},
+{
+"name":"PM Jan Dhan Yojana",
+"benefit":"Zero balance bank account",
+"url":"/schemes/pm-jan-dhan-yojana.html"
+},
+{
+"name":"PM Ujjwala Yojana",
+"benefit":"Free LPG connection for women",
+"url":"/schemes/pm-ujjwala-yojana.html"
+},
+{
+"name":"PM Fasal Bima Yojana",
+"benefit":"Crop insurance scheme",
+"url":"/schemes/pm-fasal-bima-yojana.html"
+},
+{
+"name":"Sukanya Samriddhi Yojana",
+"benefit":"Savings scheme for girl child",
+"url":"/schemes/sukanya-samriddhi-yojana.html"
+},
+{
+"name":"Stand Up India Scheme",
+"benefit":"Support for SC/ST entrepreneurs",
+"url":"/schemes/stand-up-india-scheme.html"
+},
+{
+"name":"Startup India Scheme",
+"benefit":"Support for startups",
+"url":"/schemes/startup-india-scheme.html"
+},
+{
+"name":"Skill India Mission",
+"benefit":"Skill development programs",
+"url":"/schemes/skill-india-mission.html"
+},
+{
+"name":"Digital India Mission",
+"benefit":"Digital infrastructure development",
+"url":"/schemes/digital-india-mission.html"
+},
+{
+"name":"National Health Mission",
+"benefit":"Healthcare services improvement",
+"url":"/schemes/national-health-mission.html"
+},
+{
+"name":"National Scholarship Scheme",
+"benefit":"Scholarship for students",
+"url":"/schemes/national-scholarship-scheme.html"
+},
+{
+"name":"PM Jeevan Jyoti Bima Yojana",
+"benefit":"Life insurance scheme",
+"url":"/schemes/pm-jeevan-jyoti-bima-yojana.html"
+},
+{
+"name":"PM Suraksha Bima Yojana",
+"benefit":"Accident insurance scheme",
+"url":"/schemes/pm-suraksha-bima-yojana.html"
+},
+{
+"name":"PM SVANidhi Scheme",
+"benefit":"Loan for street vendors",
+"url":"/schemes/pm-svanidhi-scheme.html"
 }
 ]
