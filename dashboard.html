@@ -24,7 +24,6 @@
 </div>
 
 <nav>
-
 <a href="/">Home</a>
 <a href="/explore.html">Explore</a>
 <a href="/schemes/">Schemes</a>
@@ -33,143 +32,136 @@
 <a href="/tools/scheme-finder.html">Finder</a>
 <a href="/dashboard.html">Dashboard</a>
 <a href="/scam-alerts.html">Alerts</a>
-
 </nav>
 
 </header>
+
 
 <section class="hero">
 
 <h1>India Welfare Dashboard</h1>
 
 <p>
-Overview of major welfare programmes and their impact across India.
+Data overview of major government schemes and their impact across India.
 </p>
 
 </section>
 
+
 <section class="section">
 
-<h2>India Welfare Snapshot</h2>
+<h2 style="text-align:center">Welfare Snapshot</h2>
 
 <div class="grid">
 
 <div class="card">
-
-<h3>5</h3>
-Schemes Analysed
-
+<h3>20+</h3>
+Schemes Covered
 </div>
 
 <div class="card">
-
-<h3>100+ crore</h3>
-Beneficiaries Covered
-
+<h3>100+ Crore</h3>
+Beneficiaries
 </div>
 
 <div class="card">
-
-<h3>₹25+ lakh crore</h3>
-Total Welfare Impact
-
+<h3>₹25+ Lakh Crore</h3>
+Welfare Impact
 </div>
 
 <div class="card">
-
-<h3>10+ sectors</h3>
-Welfare Coverage Areas
-
+<h3>10+ Sectors</h3>
+Coverage Areas
 </div>
 
 </div>
 
 </section>
 
+
 <section class="section">
 
-<h2>Major Schemes by Beneficiaries</h2>
+<h2 style="text-align:center">Beneficiaries by Scheme</h2>
 
 <canvas id="beneficiaryChart"></canvas>
 
 </section>
 
+
 <section class="section">
 
-<h2>Major Schemes by Financial Scale</h2>
+<h2 style="text-align:center">Scheme Distribution</h2>
 
 <canvas id="budgetChart"></canvas>
 
 </section>
 
+
 <section class="section">
 
-<h2>Top Welfare Schemes</h2>
+<h2 style="text-align:center">Top Schemes</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>PM Jan Dhan Yojana</h3>
-<a href="/schemes/pm-jan-dhan-yojana.html">View Scheme</a>
+<h3>PM Jan Dhan</h3>
+<a href="/schemes/pm-jan-dhan-yojana.html">View</a>
 </div>
 
 <div class="card">
 <h3>PM Kisan</h3>
-<a href="/schemes/pm-kisan.html">View Scheme</a>
+<a href="/schemes/pm-kisan.html">View</a>
 </div>
 
 <div class="card">
 <h3>Ayushman Bharat</h3>
-<a href="/schemes/ayushman-bharat.html">View Scheme</a>
+<a href="/schemes/ayushman-bharat.html">View</a>
 </div>
 
 <div class="card">
 <h3>PM Mudra</h3>
-<a href="/schemes/pm-mudra-yojana.html">View Scheme</a>
-</div>
-
-<div class="card">
-<h3>PM Awas</h3>
-<a href="/schemes/pm-awas-yojana.html">View Scheme</a>
+<a href="/schemes/pm-mudra-yojana.html">View</a>
 </div>
 
 </div>
 
 </section>
 
+
 <footer>
 
 <p>
-
 <a href="/about.html">About</a> |
 <a href="/privacy-policy.html">Privacy Policy</a> |
 <a href="/contact.html">Contact</a>
-
 </p>
+
+<p>© JanSevaSetu</p>
 
 </footer>
 
+
 <script>
 
+// Bar chart
 new Chart(document.getElementById("beneficiaryChart"),{
 type:"bar",
 data:{
 labels:["Jan Dhan","PM Kisan","Ayushman","Mudra","PMAY"],
 datasets:[{
 label:"Beneficiaries (crore)",
-data:[50,11,50,40,3],
-backgroundColor:"green"
+data:[50,11,50,40,3]
 }]
 }
 });
 
+// Pie chart
 new Chart(document.getElementById("budgetChart"),{
 type:"pie",
 data:{
 labels:["PM Kisan","PMAY","Ayushman","Mudra"],
 datasets:[{
-data:[3,10,1,23],
-backgroundColor:["green","blue","orange","purple"]
+data:[3,10,1,23]
 }]
 }
 });
@@ -177,5 +169,4 @@ backgroundColor:["green","blue","orange","purple"]
 </script>
 
 </body>
-
 </html>
