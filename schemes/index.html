@@ -2,7 +2,6 @@
 <html lang="hi">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +9,7 @@
 
 <link rel="stylesheet" href="../assets/style.css">
 
-<meta name="description" content="भारत की प्रमुख सरकारी योजनाओं की सूची और जानकारी।">
+<meta name="description" content="Browse all government schemes including financial, health, housing and welfare programs.">
 
 </head>
 
@@ -25,14 +24,14 @@
 
 <nav>
 
-<a href="/">Home</a>
-<a href="/explore.html">Explore</a>
-<a href="/schemes/">Schemes</a>
-<a href="/categories/">Categories</a>
-<a href="/guides/">Guides</a>
-<a href="/tools/scheme-finder.html">Finder</a>
-<a href="/dashboard.html">Dashboard</a>
-<a href="/scam-alerts.html">Alerts</a>
+<a href="../index.html">Home</a>
+<a href="../explore.html">Explore</a>
+<a href="../schemes/">Schemes</a>
+<a href="../categories/">Categories</a>
+<a href="../guides/">Guides</a>
+<a href="../tools/scheme-finder.html">Finder</a>
+<a href="../dashboard.html">Dashboard</a>
+<a href="../scam-alerts.html">Alerts</a>
 
 </nav>
 
@@ -41,10 +40,10 @@
 
 <section class="hero">
 
-<h1>Government Schemes Directory</h1>
+<h1>All Government Schemes</h1>
 
 <p>
-भारत सरकार और राज्य सरकारों की प्रमुख योजनाओं की जानकारी देखें।
+Explore and discover government schemes across different sectors including agriculture, health, finance and social welfare.
 </p>
 
 </section>
@@ -52,7 +51,7 @@
 
 <section class="section">
 
-<h2 style="text-align:center">Central Government Schemes</h2>
+<h2 style="text-align:center">Browse Schemes</h2>
 
 <div id="schemeList" class="grid"></div>
 
@@ -76,11 +75,6 @@
 </div>
 
 <div class="card">
-<h3>Student Schemes</h3>
-<a href="../categories/">Explore</a>
-</div>
-
-<div class="card">
 <h3>Health Schemes</h3>
 <a href="../categories/health-schemes.html">Explore</a>
 </div>
@@ -93,30 +87,27 @@
 <footer>
 
 <p>
-
 <a href="../about.html">About</a> |
 <a href="../privacy-policy.html">Privacy Policy</a> |
 <a href="../contact.html">Contact</a>
-
 </p>
 
-<p>
-© JanSevaSetu
-</p>
+<p>© JanSevaSetu</p>
 
 </footer>
 
-<link rel="stylesheet" href="/assets/style.css">
 
 <script>
 
 async function loadSchemes(){
 
 const res = await fetch("../data/schemes.json");
-
 const schemes = await res.json();
 
 const list = document.getElementById("schemeList");
+
+// Sort alphabetically
+schemes.sort((a,b)=> a.name.localeCompare(b.name));
 
 schemes.forEach(function(s){
 
@@ -124,7 +115,7 @@ list.innerHTML += `
 <div class="card">
 <h3>${s.name}</h3>
 <p>${s.benefit}</p>
-<a href="${s.url}">View Scheme</a>
+<a href="${s.url}">View Details</a>
 </div>
 `;
 
