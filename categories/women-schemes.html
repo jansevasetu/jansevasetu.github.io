@@ -6,24 +6,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Women Government Schemes | JanSevaSetu</title>
+<title>Women Schemes | JanSevaSetu</title>
 
-<meta name="description" content="महिलाओं के लिए भारत सरकार की प्रमुख योजनाओं की जानकारी।">
+<link rel="stylesheet" href="../assets/style.css">
 
-<link rel="stylesheet" href="/assets/style.css">
+<meta name="description" content="Government schemes for women including financial support, savings schemes and welfare programs.">
 
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
 
+<div class="logo">
 <h1>JanSevaSetu</h1>
-<p>हर नागरिक तक सही योजना जानकारी</p>
-
-</header>
+<span>India’s Public Welfare Intelligence Platform</span>
+</div>
 
 <nav>
+
 <a href="../index.html">Home</a>
 <a href="../explore.html">Explore</a>
 <a href="../schemes/">Schemes</a>
@@ -31,45 +32,96 @@
 <a href="../guides/">Guides</a>
 <a href="../tools/scheme-finder.html">Finder</a>
 <a href="../dashboard.html">Dashboard</a>
-<a href="../scam-alerts.html">Alerts</a>
+
 </nav>
+
+</header>
+
+
+<section class="hero">
+
+<h1>Women Schemes</h1>
+
+<p>
+Explore government schemes designed for women including savings, financial support and empowerment programs.
+</p>
+
+</section>
+
 
 <section class="section">
 
-<h1>Women Government Schemes</h1>
+<h2 style="text-align:center">Available Schemes</h2>
 
-<p>
-यहाँ महिलाओं के लिए भारत सरकार की प्रमुख योजनाओं की जानकारी दी गई है।
-</p>
-
-<div class="grid">
-
-<div class="card">
-<a href="/schemes/pm-ujjwala-yojana.html">
-Pradhan Mantri Ujjwala Yojana
-</a>
-</div>
-
-</div>
+<div id="schemeList" class="grid"></div>
 
 </section>
+
+
+<section class="section">
+
+<h2>Who Should Explore This?</h2>
+
+<p>
+This category is useful for women looking for financial security, savings schemes, education support and welfare programs.
+</p>
+
+</section>
+
 
 <footer>
 
 <p>
-
-<a href="/about.html">About</a> |
-<a href="/privacy-policy.html">Privacy Policy</a> |
-<a href="/disclaimer.html">Disclaimer</a> |
-<a href="/contact.html">Contact</a>
-
+<a href="../about.html">About</a> |
+<a href="../privacy-policy.html">Privacy Policy</a> |
+<a href="../contact.html">Contact</a>
 </p>
 
-<p>
-© JanSevaSetu - Public Scheme Knowledge Platform
-</p>
+<p>© JanSevaSetu</p>
 
 </footer>
 
+
+<script>
+
+async function loadSchemes(){
+
+const res = await fetch("../data/schemes.json");
+
+const schemes = await res.json();
+
+const list = document.getElementById("schemeList");
+
+schemes.forEach(function(s){
+
+const name = s.name.toLowerCase();
+
+// Women filter logic
+if(
+name.includes("sukanya") ||
+name.includes("ujjwala") ||
+name.includes("women") ||
+name.includes("girl")
+){
+
+list.innerHTML += `
+<div class="card">
+<h3>${s.name}</h3>
+<p>${s.benefit}</p>
+<a href="${s.url}">View Scheme</a>
+</div>
+`;
+
+}
+
+});
+
+}
+
+loadSchemes();
+
+</script>
+
 </body>
+
 </html>
